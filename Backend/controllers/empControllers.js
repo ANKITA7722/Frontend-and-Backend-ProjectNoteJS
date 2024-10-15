@@ -14,9 +14,19 @@ const empSave = async (req, res) => {
         res.status(200).json(employees);
     } catch (error) {
         
-        res.status(404).json({ error: "Failed to save employee", message: error.message });
+        res.status(404).json("MongoDb Server No Started...!!!");
     }
 };
+
+const empDataDisplay=async(req,res)=>{
+    try {
+        const empdata = await EmpModel.find();
+        res.status(200).json(empdata);
+    } catch (error) {
+        res.status(404).json("Data from MongoDB not Found..!")
+    }
+}
 module.exports = {
-    empSave
+    empSave,
+    empDataDisplay
 };

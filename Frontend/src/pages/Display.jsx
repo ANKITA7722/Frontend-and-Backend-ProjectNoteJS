@@ -14,7 +14,7 @@ const Display = () => {
       setMydata(response.data);
       console.log(response);
     } catch (error) {
-      console.log("server not Found");
+      alert(error.response.data);
     }
   };
   useEffect(() => {

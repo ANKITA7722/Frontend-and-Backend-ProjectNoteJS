@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import Insert from "./pages/Insert";
 import Display from "./pages/Display";
 import Home from "./pages/Home";
+import Search from "./pages/Search";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
             <Route path="Home" element={<Home />} />
             <Route path="insert" element={<Insert />} />
             <Route path="display" element={<Display />} />
+            <Route path="search" element={<Search/>}/>
 
           </Route>
         </Routes>

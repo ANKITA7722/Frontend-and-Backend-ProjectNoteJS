@@ -3,6 +3,7 @@ const express = require("express");
 const empController = require("../controllers/empControllers");
 
 route.post("/employeesave", empController.empSave);
+route.get("/employeedisplay", empController.empDataDisplay);
 
 
 
