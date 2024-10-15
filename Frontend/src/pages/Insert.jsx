@@ -31,7 +31,7 @@ const Insert = () => {
 
     return (
         <div className="container">
-            <h1>Insert Employee Details</h1>
+            <h1 className='insert'>Insert Employee Details</h1>
 
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formEmpNo">
@@ -78,7 +78,7 @@ const Insert = () => {
                     />
                 </Form.Group>
 
-                <button type="submit">Save</button> 
+                <button type="submit">Save Data</button> 
                 <ToastContainer />
             </Form>
         </div>

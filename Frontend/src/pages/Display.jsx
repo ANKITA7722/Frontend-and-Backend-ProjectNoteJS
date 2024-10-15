@@ -36,8 +36,10 @@ const Display = () => {
 
   return (
     <>
-      <Table striped bordered hover size="sm">
-        <tr>
+    <div className="dispContainer">
+     <h1 style={{color:"green"}} align="center">Display Employee Data</h1>
+      <Table striped bordered hover size="sm" border={2} style={{backgroundColor:"whitesmoke"}}>
+        <tr border={2}>
           <th>Employee no</th>
           <th>Name</th>
           <th>City</th>
@@ -45,6 +47,7 @@ const Display = () => {
         </tr>
         {ans}
       </Table>
+      </div>
     </>
   );
 };

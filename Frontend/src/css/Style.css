@@ -1,0 +1,25 @@
+.home{
+    text-align: center;
+    /* background-color:rgb(236, 67, 106); */
+    justify-content: space-around;
+    height: 200px;
+    padding: 70px;
+    color: rgb(211, 12, 12);
+ 
+}
+.insert{
+    justify-content: space-around;
+    color: rgb(211, 12, 12);
+}
+.container button{
+  border-radius: 5px;
+  padding: 5px;
+}
+.dispContainer{
+    width: 80%;
+    margin-left: 7%;
+
+}
+.dispContainer Table{
+    border: 1px solid black;
+}
