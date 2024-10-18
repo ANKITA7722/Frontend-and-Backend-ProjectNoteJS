@@ -12,7 +12,7 @@ const Update = () => {
     const loadData = () => {
         let api = "http://localhost:8000/employees/employeedisplay";
         axios.get(api).then((res) => {
-            setMydata(res.data);  // Set the response data to state
+            setMydata(res.data);
             console.log("Data loaded successfully");
         }).catch((err) => {
             console.error("Error loading data", err);
@@ -21,13 +21,13 @@ const Update = () => {
 
     useEffect(() => {
         loadData();
-    }, []);  // Empty array as dependency to load data once on component mount
+    }, []);
 
     const myrecDel = (id) => {
-        let api = "http://localhost:8000/employees/employeedelete";  // Changed to employeedelete for deletion
+        let api = "http://localhost:8000/employees/employeedelete";  
         axios.post(api, { id: id }).then((res) => {
             alert("Data deleted successfully!");
-            loadData();  // Reload data after deletion
+            loadData();  
         }).catch((err) => {
             console.error("Error deleting data", err);
         });
@@ -66,7 +66,6 @@ const Update = () => {
                         <th>Name</th>
                         <th>city</th>
                         <th>Salary</th>
-                        
                     </tr>
                 </thead>
                 <tbody>

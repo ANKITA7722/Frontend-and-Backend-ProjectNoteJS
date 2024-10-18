@@ -32,8 +32,13 @@ const empDataSearch=async(req,res)=>{
     const mydata=await EmpModel.find({empno:empno});
     res.send(mydata);
 }
+
+const empEditData=()=>{
+    
+}
 module.exports = {
     empSave,
     empDataDisplay,
-    empDataSearch
+    empDataSearch,
+    empEditData
 };

@@ -23,3 +23,8 @@
 .dispContainer Table{
     border: 1px solid black;
 }
+
+.EditContainer{
+    width: 50%;
+    margin-left: 100px;
+}

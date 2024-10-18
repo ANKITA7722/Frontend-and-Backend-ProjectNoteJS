@@ -5,6 +5,7 @@ import Display from "./pages/Display";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Update from "./pages/Update";
+import EditData from "./pages/EditData";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="display" element={<Display />} />
             <Route path="search" element={<Search/>}/>
             <Route path="update" element={<Update/>}/>
+            <Route path="editdata/:empid" element={<EditData/>}/>
 
           </Route>
         </Routes>
