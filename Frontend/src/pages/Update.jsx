@@ -14,9 +14,7 @@ const Update = () => {
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log("Data loaded successfully");
-        }).catch((err) => {
-            console.error("Error loading data", err);
-        });
+        })
     };
 
     useEffect(() => {
@@ -28,9 +26,7 @@ const Update = () => {
         axios.post(api, { id: id }).then((res) => {
             alert("Data deleted successfully!");
             loadData();  
-        }).catch((err) => {
-            console.error("Error deleting data", err);
-        });
+        })
     };
 
     const myrecEdit = (id) => {

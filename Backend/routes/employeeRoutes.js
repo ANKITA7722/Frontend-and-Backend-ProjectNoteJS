@@ -6,7 +6,7 @@ route.post("/employeesave", empController.empSave);
 route.get("/employeedisplay", empController.empDataDisplay);
 route.post("/employeesearch", empController.empDataSearch);
 route.get("/employeeeditdata",empController.empEditData);
-
-
+route.get("/employeedelete",empController.empDataDelete);
+// route.get("/employeedelete",empController.empUpdateDataDisplay,)
 
  module.exports = route;

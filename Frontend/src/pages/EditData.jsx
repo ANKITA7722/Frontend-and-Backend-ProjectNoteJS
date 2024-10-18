@@ -44,7 +44,6 @@ const EditData=()=>{
                     <Form.Control type="text" placeholder="Enter Employee Number" value={mydata.salary} />
                 </Form.Group>
 
-
                 </Form>
                 </div>
         </>
