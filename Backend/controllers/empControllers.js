@@ -26,7 +26,14 @@ const empDataDisplay=async(req,res)=>{
         res.status(404).json("Data from MongoDB not Found..!")
     }
 }
+
+const empDataSearch=async(req,res)=>{
+    let {empno}=req.body;
+    const mydata=await EmpModel.find({empno:empno});
+    res.send(mydata);
+}
 module.exports = {
     empSave,
-    empDataDisplay
+    empDataDisplay,
+    empDataSearch
 };

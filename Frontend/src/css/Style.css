@@ -1,8 +1,8 @@
 .home{
     text-align: center;
-    /* background-color:rgb(236, 67, 106); */
+     background-color:black; 
     justify-content: space-around;
-    height: 200px;
+    height: 400px;
     padding: 70px;
     color: rgb(211, 12, 12);
  

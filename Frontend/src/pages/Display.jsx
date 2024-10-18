@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
 import Table from 'react-bootstrap/Table'
 
 const Display = () => {
@@ -36,17 +35,22 @@ const Display = () => {
 
   return (
     <>
-    <div className="dispContainer">
-     <h1 style={{color:"green"}} align="center">Display Employee Data</h1>
-      <Table striped bordered hover size="sm" border={2} style={{backgroundColor:"whitesmoke"}}>
-        <tr border={2}>
-          <th>Employee no</th>
-          <th>Name</th>
-          <th>City</th>
-          <th>Salary</th>
-        </tr>
-        {ans}
-      </Table>
+      <div className="dispContainer">
+        <h1 style={{ color: "green" }} align="center">Display Employee Data</h1>
+        <Table striped bordered>
+          <thead>
+            <tr>
+              <th>Emp No.</th>
+              <th>Name</th>
+              <th>city</th>
+              <th>Salary</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {ans}
+          </tbody>
+        </Table>
       </div>
     </>
   );

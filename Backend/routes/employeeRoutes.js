@@ -4,6 +4,7 @@ const empController = require("../controllers/empControllers");
 
 route.post("/employeesave", empController.empSave);
 route.get("/employeedisplay", empController.empDataDisplay);
+route.post("/employeesearch", empController.empDataSearch);
 
 
 
