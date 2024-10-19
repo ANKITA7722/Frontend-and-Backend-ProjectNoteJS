@@ -16,18 +16,17 @@ const Update = () => {
             console.log("Data loaded successfully");
         })
     };
-
     useEffect(() => {
         loadData();
     }, []);
 
-    const myrecDel = (id) => {
-        let api = "http://localhost:8000/employees/employeedatadelete";  
-        axios.post(api, { id: id }).then((res) => {
-            alert("Data deleted successfully!");
-            loadData();  
+    const myrecDel=(id)=>{
+        let api="http://localhost:8000/employees/employeedatadelete";
+        axios.post(api, {id:id}).then((res)=>{
+          alert("Data deleted!!!");
+          loadData();
         })
-    };
+      }
 
     const myrecEdit = (id) => {
         navigate(`/editdata/${id}`);
@@ -35,18 +34,19 @@ const Update = () => {
 
     const ans = mydata.map((key) => {
         return (
-            <tr key={key._id}>
+            <tr key={key.id}>
                 <td>{key.empno}</td>
                 <td>{key.name}</td>
                 <td>{key.city}</td>
                 <td>{key.salary}</td>
                 <td>
-                    <a href="#" onClick={() => { myrecEdit(key._id) }}>
-                        <img src={editimg} width="30" height="30" alt="Edit" />
-                    </a>
-                    <a href="#" onClick={() => { myrecDel(key._id) }}>
-                        <img src={delimg} width="30" height="30" alt="Delete" />
-                    </a>
+                <a href="#" onClick={()=>{myrecEdit(key._id)}}>
+                <img src={editimg} width="30" height="30"/>
+                </a>
+                
+                 <a href="#" onClick={()=>{myrecDel(key._id)}}>
+                 <img src={delimg} width="30" height="30"/>
+                 </a>
                 </td>
             </tr>
         );

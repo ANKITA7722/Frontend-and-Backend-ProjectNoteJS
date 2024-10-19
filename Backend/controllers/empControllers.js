@@ -11,8 +11,7 @@ const empSave = async (req, res) => {
             salary:salary
         });
         res.status(200).json(employees);
-    } catch (error) {
-        
+    } catch (error) {  
         res.status(404).json("MongoDb Server No Started...!!!");
     }
 };
@@ -32,29 +31,41 @@ const empDataSearch=async(req,res)=>{
     res.send(mydata);
 }
 
-// const empUpdateDataDisplay=async(req, res)=>{
-//     const Data= await EmpModel.find();
-//     res.send(Data);
-// }
-
-const empDataDelete=async(req,res)=>{
-   const myid = req.body.id;
-   const employee = await EmpModel.findByIdAndDelete(myid);
-   res.send("record deleted");
+const empUpdateDataDisplay=async(req, res)=>{
+    const Data= await EmpModel.find();
+    res.send(Data);
 }
 
+const empDataDelete=async(req, res)=>{
+    const myid= req.body.id;
+    const Ankita = await  EmpModel.findByIdAndDelete(myid);   
+    res.send("record deleted!")
+ }
 
-const empEditData=async()=>{
+
+const empEditData = async()=>{
 const id = req.body.id;
 const Empdata = await EmpModel.findById(id);
 res.send(Empdata);    
 
 }
+
+const empEditDataSave=async(req,res)=>{
+    const {_id, empno, name, city, salary } = req.body;
+    const empdata = await EmpModel.findByIdAndUpdate(_id, {
+        empno:empno,
+        name:name,
+        city:city,
+        salary:salary
+    })
+    res.send("Data Succesfully updated");
+}
 module.exports = {
     empSave,
     empDataDisplay,
     empDataSearch,
-    // empUpdateDataDisplay,
+    empUpdateDataDisplay,
     empEditData,
-    empDataDelete
+    empDataDelete,
+    empEditDataSave
 };
