@@ -22,21 +22,19 @@ const Display = () => {
 
   const ans = mydata.map((key) => {
     return (
-
       <tr>
         <td>{key.empno}</td>
         <td>{key.name}</td>
         <td>{key.city}</td>
         <td>{key.salary}</td>
       </tr>
-
     );
   });
 
   return (
     <>
       <div className="dispContainer">
-        <h1 style={{ color: "green" }} align="center">Display Employee Data</h1>
+        <h1 style={{color: "green"}} align="center">Display Employee Data</h1>
         <Table striped bordered>
           <thead>
             <tr>
@@ -44,7 +42,6 @@ const Display = () => {
               <th>Name</th>
               <th>city</th>
               <th>Salary</th>
-
             </tr>
           </thead>
           <tbody>

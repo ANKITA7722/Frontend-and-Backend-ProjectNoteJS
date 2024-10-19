@@ -38,7 +38,6 @@ const EditData=()=>{
                     <Form.Control type="text" placeholder="Enter Employee Number" value={mydata.city}  />
                 </Form.Group>
 
-
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Edit Employee salary</Form.Label>
                     <Form.Control type="text" placeholder="Enter Employee Number" value={mydata.salary} />

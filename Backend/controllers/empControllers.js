@@ -27,7 +27,7 @@ const empDataDisplay=async(req,res)=>{
 }
 
 const empDataSearch=async(req,res)=>{
-    let {empno}=req.body;
+    let {empno} = req.body;
     const mydata = await EmpModel.find({empno:empno});
     res.send(mydata);
 }
@@ -36,11 +36,13 @@ const empDataSearch=async(req,res)=>{
 //     const Data= await EmpModel.find();
 //     res.send(Data);
 // }
-const empDataDelete=async()=>{
-   const myid=req.body.id;
+
+const empDataDelete=async(req,res)=>{
+   const myid = req.body.id;
    const employee = await EmpModel.findByIdAndDelete(myid);
    res.send("record deleted");
 }
+
 
 const empEditData=async()=>{
 const id = req.body.id;

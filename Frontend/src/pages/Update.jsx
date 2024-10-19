@@ -22,7 +22,7 @@ const Update = () => {
     }, []);
 
     const myrecDel = (id) => {
-        let api = "http://localhost:8000/employees/employeedelete";  
+        let api = "http://localhost:8000/employees/employeedatadelete";  
         axios.post(api, { id: id }).then((res) => {
             alert("Data deleted successfully!");
             loadData();  
