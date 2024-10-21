@@ -14,19 +14,24 @@ const Update = () => {
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log("Data loaded successfully");
-        })
+        }).catch((err) => {
+            console.error("Error loading data", err);
+        });
     };
+
     useEffect(() => {
         loadData();
     }, []);
 
-    const myrecDel=(id)=>{
-        let api="http://localhost:8000/employees/employeedatadelete";
-        axios.post(api, {id:id}).then((res)=>{
-          alert("Data deleted!!!");
-          loadData();
-        })
-      }
+    const myrecDel = (id) => {
+        let api = "http://localhost:8000/employees/employeedatadelete";
+        axios.post(api, { id: id }).then((res) => {
+            alert("Data deleted!!!");
+            loadData();
+        }).catch((err) => {
+            console.error("Error deleting data", err);
+        });
+    }
 
     const myrecEdit = (id) => {
         navigate(`/editdata/${id}`);
@@ -34,19 +39,19 @@ const Update = () => {
 
     const ans = mydata.map((key) => {
         return (
-            <tr key={key.id}>
+            <tr key={key._id}>
                 <td>{key.empno}</td>
                 <td>{key.name}</td>
                 <td>{key.city}</td>
                 <td>{key.salary}</td>
                 <td>
-                <a href="#" onClick={()=>{myrecEdit(key._id)}}>
-                <img src={editimg} width="30" height="30"/>
-                </a>
-                
-                 <a href="#" onClick={()=>{myrecDel(key._id)}}>
-                 <img src={delimg} width="30" height="30"/>
-                 </a>
+                    <button onClick={() => { myrecEdit(key._id) }} style={{ border: 'none', background: 'none' }}>
+                        <img src={editimg} width="30" height="30" alt="Edit" />
+                    </button>
+                    
+                    <button onClick={() => { myrecDel(key._id) }} style={{ border: 'none', background: 'none' }}>
+                        <img src={delimg} width="30" height="30" alt="Delete" />
+                    </button>
                 </td>
             </tr>
         );
@@ -60,8 +65,9 @@ const Update = () => {
                     <tr>
                         <th>Emp No.</th>
                         <th>Name</th>
-                        <th>city</th>
+                        <th>City</th>
                         <th>Salary</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>

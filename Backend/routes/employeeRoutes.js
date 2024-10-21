@@ -9,5 +9,6 @@ route.get("/employeedatadelete", empController.empDataDelete);
 route.post("/employeeeditdata", empController.empEditData);
 route.get("/employeeupdatedisplay",empController.empUpdateDataDisplay)
 route.post("/employeeeditsave", empController.empEditDataSave);
+route.get("/employeesearchbyname",empController.empSearchByName)
 
 module.exports = route;

@@ -9,8 +9,6 @@ const Search = () => {
     const [empno, setEmpno] = useState("");
     const [mydata, setMydata] = useState([]);
 
-
-
     const handleSubmit = () => {
         let api = "http://localhost:8000/employees/employeesearch";
         axios.post(api, { empno: empno }).then((res) => {

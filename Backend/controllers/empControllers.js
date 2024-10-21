@@ -60,6 +60,15 @@ const empEditDataSave=async(req,res)=>{
     })
     res.send("Data Succesfully updated");
 }
+
+const empSearchByName=async(req,res)=>{
+    let empname= req.query.empname;
+    console.log(req.query);
+    const docs = await EmpModel.find({empname : {$regex : empname}});
+    console.log(docs);
+    res.send(docs);
+}
+
 module.exports = {
     empSave,
     empDataDisplay,
@@ -67,5 +76,6 @@ module.exports = {
     empUpdateDataDisplay,
     empEditData,
     empDataDelete,
-    empEditDataSave
+    empEditDataSave,
+    empSearchByName
 };
