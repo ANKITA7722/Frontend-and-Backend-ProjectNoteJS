@@ -1,73 +1,90 @@
 const EmpModel = require("../modules/employeeModel");
 
+
 const empSave = async (req, res) => {
-    // res.send("data succefuuly save!!!!")
     const { empno, name, city, salary } = req.body;
     try {
         const employees = await EmpModel.create({
-            empno:empno,
-            name:name,
-            city:city,
-            salary:salary
+            empno,
+            name,
+            city,
+            salary
         });
         res.status(200).json(employees);
-    } catch (error) {  
-        res.status(404).json("MongoDb Server No Started...!!!");
+    } catch (error) {
+        res.status(500).json({ error: "Error saving employee data" });
     }
 };
 
-const empDataDisplay=async(req,res)=>{
+
+const empDataDisplay = async (req, res) => {
     try {
         const empdata = await EmpModel.find();
         res.status(200).json(empdata);
     } catch (error) {
-        res.status(404).json("Data from MongoDB not Found..!")
+        res.status(500).json({ error: "Data from MongoDB not found" });
     }
-}
+};
+const empDataSearch = async (req, res) => {
+    const { empno } = req.body;
+    try {
+        const mydata = await EmpModel.find({ empno });
+        res.status(200).json(mydata);
+    } catch (error) {
+        res.status(500).json({ error: "Error searching employee data" });
+    }
+};
+const empUpdateDataDisplay = async (req, res) => {
+    try {
+        const data = await EmpModel.find();
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(500).json({ error: "Error fetching employee data" });
+    }
+};
 
-const empDataSearch=async(req,res)=>{
-    let {empno} = req.body;
-    const mydata = await EmpModel.find({empno:empno});
-    res.send(mydata);
-}
+const empDataDelete = async (req, res) => {
+    const myid = req.body.id;
+    try {
+        await EmpModel.findByIdAndDelete(myid);
+        res.status(200).json({ message: "Record deleted successfully!" });
+    } catch (error) {
+        res.status(500).json({ error: "Error deleting employee record" });
+    }
+};
 
-const empUpdateDataDisplay=async(req, res)=>{
-    const Data= await EmpModel.find();
-    res.send(Data);
-}
-
-const empDataDelete=async(req, res)=>{
-    const myid= req.body.id;
-    const Ankita = await  EmpModel.findByIdAndDelete(myid);   
-    res.send("record deleted!")
- }
-
-
-const empEditData = async()=>{
-const id = req.body.id;
-const Empdata = await EmpModel.findById(id);
-res.send(Empdata);    
-
-}
-
-const empEditDataSave=async(req,res)=>{
-    const {_id, empno, name, city, salary } = req.body;
-    const empdata = await EmpModel.findByIdAndUpdate(_id, {
-        empno:empno,
-        name:name,
-        city:city,
-        salary:salary
-    })
-    res.send("Data Succesfully updated");
-}
-
-const empSearchByName=async(req,res)=>{
-    let empname= req.query.empname;
-    console.log(req.query);
-    const docs = await EmpModel.find({empname : {$regex : empname}});
-    console.log(docs);
-    res.send(docs);
-}
+const empEditData = async (req, res) => {
+    const { id } = req.body;
+    try {
+        const empdata = await EmpModel.findById(id);
+        res.status(200).json(empdata);
+    } catch (error) {
+        res.status(500).json({ error: "Error fetching employee data" });
+    }
+};
+const empEditDataSave = async (req, res) => {
+    const { _id, empno, name, city, salary } = req.body;
+    try {
+        await EmpModel.findByIdAndUpdate(_id, {
+            empno,
+            name,
+            city,
+            salary
+        });
+        res.status(200).json({ message: "Data successfully updated" });
+    } catch (error) {
+        res.status(500).json({ error: "Error updating employee data" });
+    }
+};
+const empSearchByName = async (req, res) => {
+    const { empname } = req.query;
+    try {
+        const docs = await EmpModel.find({ name: { $regex: empname, $options: "i" } });
+        res.status(200).json(docs);
+    } catch (error) {
+        res.status(500).json({ error: "Error searching employee by name" });
+    }
+};
 
 module.exports = {
     empSave,

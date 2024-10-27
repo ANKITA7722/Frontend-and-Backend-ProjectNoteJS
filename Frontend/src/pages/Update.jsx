@@ -24,7 +24,7 @@ const Update = () => {
     }, []);
 
     const myrecDel = (id) => {
-        let api = "http://localhost:8000/employees/employeedatadelete";
+        let api = "";
         axios.post(api, { id: id }).then((res) => {
             alert("Data deleted!!!");
             loadData();
@@ -49,7 +49,7 @@ const Update = () => {
                         <img src={editimg} width="30" height="30" alt="Edit" />
                     </button>
                     
-                    <button onClick={() => { myrecDel(key._id) }} style={{ border: 'none', background: 'none' }}>
+                    <button onClick={() => {myrecDel(key._id) }} style={{ border: 'none', background: 'none' }}>
                         <img src={delimg} width="30" height="30" alt="Delete" />
                     </button>
                 </td>
