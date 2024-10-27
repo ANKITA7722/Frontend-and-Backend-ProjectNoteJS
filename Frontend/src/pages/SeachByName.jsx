@@ -30,8 +30,7 @@ const SearchByName=()=>{
             <>
              <tr>
                 <td>{key.empno}</td>
-                <td>{key.empname}</td>
-                <td>{key.degignation}</td>
+                <td>{key.name}</td>
                 <td>{key.city}</td>
                 <td>{key.salary}</td>
             </tr>
@@ -42,13 +41,12 @@ const SearchByName=()=>{
         <center>
         <>
         <h4>Search Employee Records</h4>
-        Enter Employee Name : <input type="text" value={empname}onChange={handleInput}/>
+        Enter Employee Name : <input type="text" value={empname} onChange={handleInput}/>
         <Table responsive="sm">
         <thead>
           <tr>
             <th>Employee No</th>
             <th>Name</th>
-            <th>Degignation</th>
             <th>City</th>
             <th>Salary</th>
           </tr>

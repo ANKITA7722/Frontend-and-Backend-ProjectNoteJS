@@ -24,14 +24,18 @@ const Update = () => {
     }, []);
 
     const myrecDel = (id) => {
-        let api = "";
-        axios.post(api, { id: id }).then((res) => {
-            alert("Data deleted!!!");
-            loadData();
-        }).catch((err) => {
-            console.error("Error deleting data", err);
-        });
-    }
+        let api = `http://localhost:8000/employees/${id}`;  // Add id as a URL parameter
+    
+        axios.delete(api)
+            .then((res) => {
+                alert("Data deleted!!!");
+                loadData();  // Reload data after deletion
+            })
+            .catch((err) => {
+                console.error("Error deleting data", err);
+            });
+    };
+    
 
     const myrecEdit = (id) => {
         navigate(`/editdata/${id}`);
