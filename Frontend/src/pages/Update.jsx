@@ -10,7 +10,7 @@ const Update = () => {
     const navigate = useNavigate();
 
     const loadData = () => {
-        let api = "http://localhost:8000/employees/employeedisplay";
+        let api = "http://localhost:8000/employees/employeeupdatedisplay";
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log("Data loaded successfully");
