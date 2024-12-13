@@ -70,6 +70,17 @@ const EditData = () => {
                             onChange={handleInput} 
                         />
                     </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCity">
+                        <Form.Label>Edit Employee designation</Form.Label>
+                        <Form.Control 
+                            type="text" 
+                            placeholder="Enter Employee City" 
+                            name="designation"
+                            value={mydata.designation|| ''} 
+                            onChange={handleInput} 
+                        />
+                    </Form.Group>
+
 
                     <Form.Group className="mb-3" controlId="formBasicSalary">
                         <Form.Label>Edit Employee Salary</Form.Label>

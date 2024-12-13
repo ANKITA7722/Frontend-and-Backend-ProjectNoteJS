@@ -26,6 +26,7 @@ const Search = () => {
                     <td>{key.empno}</td>
                     <td>{key.name}</td>
                     <td>{key.city}</td>
+                    <td>{key.designation}</td>
                     <td>{key.salary}</td>
                 </tr>
             </>
@@ -48,6 +49,7 @@ const Search = () => {
                         <th>Emp No.</th>
                         <th>Name</th>
                         <th>city</th>
+                        <th>designation</th>
                         <th>Salary</th>
                         
                     </tr>

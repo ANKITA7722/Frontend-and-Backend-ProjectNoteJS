@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import editimg from "../images/edit.png";
-import delimg from "../images/delete.png";
+// import editimg from "../images/edit.png";
+// import delimg from "../images/delete.png";
 import Table from 'react-bootstrap/Table';
 
 const Update = () => {
@@ -49,12 +49,12 @@ const Update = () => {
                 <td>{key.city}</td>
                 <td>{key.salary}</td>
                 <td>
-                    <button onClick={() => { myrecEdit(key._id) }} style={{ border: 'none', background: 'none' }}>
-                        <img src={editimg} width="30" height="30" alt="Edit" />
+                    <button onClick={() => { myrecEdit(key._id) }} style={{ background: 'none', gap:"20px" }}>
+                        {/* <img src={editimg} width="30" height="30" alt="Edit" /> */}Edit
                     </button>
                     
-                    <button onClick={() => {myrecDel(key._id) }} style={{ border: 'none', background: 'none' }}>
-                        <img src={delimg} width="30" height="30" alt="Delete" />
+                    <button onClick={() => {myrecDel(key._id) }} style={{  background: 'none' }}>
+                        {/* <img src={delimg} width="30" height="30" alt="Delete" /> */}Delete
                     </button>
                 </td>
             </tr>

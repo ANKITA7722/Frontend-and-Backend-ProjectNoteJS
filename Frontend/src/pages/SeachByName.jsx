@@ -32,6 +32,7 @@ const SearchByName=()=>{
                 <td>{key.empno}</td>
                 <td>{key.name}</td>
                 <td>{key.city}</td>
+                <td>{key.designation}</td>
                 <td>{key.salary}</td>
             </tr>
             </>
@@ -48,6 +49,7 @@ const SearchByName=()=>{
             <th>Employee No</th>
             <th>Name</th>
             <th>City</th>
+            <th>Designation</th>
             <th>Salary</th>
           </tr>
           {ans}

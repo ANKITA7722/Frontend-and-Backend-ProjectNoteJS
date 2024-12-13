@@ -13,6 +13,11 @@ const empSchema = new mongoose.Schema({
         type:String,
         require:true
     },
+    designation:{
+        type:String,
+        require:true
+    },
+
     salary:{
         type:Number,
         require:true

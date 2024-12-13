@@ -6,7 +6,8 @@ import Search from "./pages/Search";
 import Update from "./pages/Update";
 import EditData from "./pages/EditData";
 import Home from "./pages/Home";
-import SearchByName from "./pages/SeachByName";
+import TotalSalary from "./pages/TotalSalary";
+// import SearchByName from "./pages/SeachByName";
 
 
 const App = () => {
@@ -21,8 +22,9 @@ const App = () => {
             <Route path="display" element={<Display />} />
             <Route path="search" element={<Search />} />
             <Route path="update" element={<Update />} />
-            <Route path="searchbyname" element={<SearchByName/>} />
+            {/* <Route path="searchbyname" element={<SearchByName/>} /> */}
             <Route path="editdata/:empid" element={<EditData />} />
+            <Route path="toalsalary" element={<TotalSalary />} />
            
           </Route>
         </Routes>

@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Insert = () => {
-    
     const [input, setInput] = useState({});
 
     const handleInput = (e) => {
@@ -66,6 +65,18 @@ const Insert = () => {
                         onChange={handleInput}
                     />
                 </Form.Group>
+                <Form.Group className="mb-3" controlId="formCity">
+                    <Form.Label>Designation</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Enter Your designation"
+                        name="designation"
+                        value={input.designation}
+                        onChange={handleInput}
+                    />
+                </Form.Group>
+
+
 
                 <Form.Group className="mb-3" controlId="formSalary">
                     <Form.Label>Salary</Form.Label>

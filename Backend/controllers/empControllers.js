@@ -2,12 +2,13 @@ const EmpModel = require("../modules/employeeModel");
 
 
 const empSave = async (req, res) => {
-    const { empno, name, city, salary } = req.body;
+    const { empno, name, city, designation, salary } = req.body;
     try {
         const employees = await EmpModel.create({
             empno,
             name,
             city,
+            designation,
             salary
         });
         res.status(200).json(employees);
@@ -63,12 +64,13 @@ const empEditData = async (req, res) => {
     }
 };
 const empEditDataSave = async (req, res) => {
-    const { _id, empno, name, city, salary } = req.body;
+    const { _id, empno, name, city,designation, salary } = req.body;
     try {
         await EmpModel.findByIdAndUpdate(_id, {
             empno,
             name,
             city,
+            designation,
             salary
         });
         res.status(200).json({ message: "Data successfully updated" });
@@ -86,6 +88,35 @@ const empSearchByName = async (req, res) => {
     }
 };
 
+const empSalaryTotal = async (req, res) => {
+    try {
+        
+        const employees = await Employee.find();
+
+        
+        const totalSalary = employees.reduce((sum, emp) => {
+            return sum + (parseFloat(emp.salary) || 0);
+        }, 0);
+
+        
+        res.status(200).json({
+            message: "Total salary calculated successfully",
+            totalSalary,
+            employees
+        });
+    } catch (error) {
+        console.error("Error calculating total salary:", error);
+        res.status(500).json({
+            message: "Failed to calculate total salary",
+            error: error.message
+        });
+    }
+};
+
+
+
+
+
 module.exports = {
     empSave,
     empDataDisplay,
@@ -94,5 +125,6 @@ module.exports = {
     empEditData,
     empDataDelete,
     empEditDataSave,
-    empSearchByName
+    empSearchByName,
+    empSalaryTotal
 };
