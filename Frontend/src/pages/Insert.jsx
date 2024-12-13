@@ -16,7 +16,7 @@ const Insert = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const api = "http://localhost:8000/employees/employeesave";
+        const api = "http://localhost:8080/employees/employeesave";
 
         axios.post(api, input).then((res) => {
                 console.log(res);

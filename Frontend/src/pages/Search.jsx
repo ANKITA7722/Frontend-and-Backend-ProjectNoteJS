@@ -10,7 +10,7 @@ const Search = () => {
     const [mydata, setMydata] = useState([]);
 
     const handleSubmit = () => {
-        let api = "http://localhost:8000/employees/employeesearch";
+        let api = "http://localhost:8080/employees/employeesearch";
         axios.post(api, { empno: empno }).then((res) => {
             setMydata(res.data);
 

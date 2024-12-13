@@ -10,7 +10,7 @@ const SearchByName=()=>{
 
     const handleInput=(e)=>{
         setEmpname(e.target.value);
-        let api = `http://localhost:8000/employees/employeesearchbyname/?empname=${empname}`;
+        let api = `http://localhost:8080/employees/employeesearchbyname/?empname=${empname}`;
         axios.get(api).then((res)=>{
             console.log(res.data);
 

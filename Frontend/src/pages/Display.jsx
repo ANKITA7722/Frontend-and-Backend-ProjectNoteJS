@@ -6,7 +6,7 @@ const Display = () => {
   const [mydata, setMydata] = useState([]);
 
   const loadData = async () => {
-    let api = "http://localhost:8000/employees/employeedisplay";
+    let api = "http://localhost:8080/employees/employeedisplay";
 
     try {
       const response = await axios.get(api);

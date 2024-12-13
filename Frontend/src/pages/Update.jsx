@@ -10,7 +10,7 @@ const Update = () => {
     const navigate = useNavigate();
 
     const loadData = () => {
-        let api = "http://localhost:8000/employees/employeeupdatedisplay";
+        let api = "http://localhost:8080/employees/employeeupdatedisplay";
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log("Data loaded successfully");
@@ -24,7 +24,7 @@ const Update = () => {
     }, []);
 
     const myrecDel = (id) => {
-        let api = `http://localhost:8000/employees/${id}`;  // Add id as a URL parameter
+        let api = `http://localhost:8080/employees/${id}`;  // Add id as a URL parameter
     
         axios.delete(api)
             .then((res) => {

@@ -8,7 +8,7 @@ const EditData = () => {
     const [mydata, setMydata] = useState({});
 
     const loadData = () => {
-        let api = "http://localhost:8000/employees/employeeeditdata";
+        let api = "http://localhost:8080/employees/employeeeditdata";
         axios.post(api, { id: empid }).then((res) => {
             console.log(res.data);
             setMydata(res.data);
@@ -27,7 +27,7 @@ const EditData = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
-        let api = "http://localhost:8000/employees/employeeeditsave";
+        let api = "http://localhost:8080/employees/employeeeditsave";
         axios.post(api, mydata).then((res) => {
             alert("Data updated!");
         });
