@@ -76,7 +76,7 @@ const EditData = () => {
                             type="text" 
                             placeholder="Enter Employee City" 
                             name="designation"
-                            value={mydata.designation|| ''} 
+                            value={mydata.designation} 
                             onChange={handleInput} 
                         />
                     </Form.Group>
@@ -88,7 +88,7 @@ const EditData = () => {
                             type="text" 
                             placeholder="Enter Employee Salary" 
                             name="salary"
-                            value={mydata.salary || ''} 
+                            value={mydata.salary} 
                             onChange={handleInput} 
                         />
                     </Form.Group>
@@ -104,5 +104,4 @@ export default EditData;
 
 
 
-// 
-// hhhhhe
+

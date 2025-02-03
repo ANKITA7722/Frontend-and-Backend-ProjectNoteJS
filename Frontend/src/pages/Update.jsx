@@ -24,7 +24,7 @@ const Update = () => {
     }, []);
 
     const myrecDel = (id) => {
-        let api = `http://localhost:8080/employees/${id}`;  // Add id as a URL parameter
+        let api = `http://localhost:8080/employees/${id}`;  
     
         axios.delete(api)
             .then((res) => {

@@ -91,7 +91,7 @@ const empSearchByName = async (req, res) => {
 const empSalaryTotal = async (req, res) => {
     try {
         
-        const employees = await Employee.find();
+        const employees = await EmpModel.find();
 
         
         const totalSalary = employees.reduce((sum, emp) => {
